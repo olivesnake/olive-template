@@ -1,12 +1,11 @@
 # 🫒 template
 
-simple flask boilerplate that uses [tailwindcss](https://tailwindcss.com/)
+simple [flask](https://flask.palletsprojects.com/en/stable/) and  [tailwindcss](https://tailwindcss.com/) full-stack
+boilerplate
 
 #### setup
 
 downlaod this repo, cd into it, then run the following:
-
-
 
 ```shell
 python -m venv venv/
