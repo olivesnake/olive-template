@@ -6,8 +6,11 @@ simple flask boilerplate that uses [tailwindcss](https://tailwindcss.com/)
 
 downlaod this repo, cd into it, then run the following:
 
+
+
 ```shell
 python -m venv venv/
+source ./venv/Scripts/Activate # windows
 pip install -r requirements
 npm i
 ```
