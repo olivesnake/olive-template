@@ -3,7 +3,7 @@ OS := $(shell uname)
 all: setup run
 
 setup:
-	python3 -m venv venv
+	python -m venv venv
 ifeq ($(OS), Linux)
 	. venv/bin/activate
 else ifeq ($(OS), Darwin)
