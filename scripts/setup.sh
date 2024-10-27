@@ -10,5 +10,4 @@ else
 fi
 pip install -r requirements.txt
 npm install
-@echo "setup complete!"
 
