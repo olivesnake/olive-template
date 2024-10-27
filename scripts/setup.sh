@@ -1,0 +1,14 @@
+#!/usr/bin/bash
+
+OS_NAME=$(uname)
+
+python -m venv venv/
+if [[ "$OS_NAME" == "Linux" || "$OS_NAME" == "Darwin" ]]; then
+  . venv/bin/activate
+else
+  . venv/Scripts/activate
+fi
+pip install -r requirements.txt
+npm install
+@echo "setup complete!"
+

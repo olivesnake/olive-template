@@ -4,7 +4,7 @@
   "description": "",
   "main": "tailwind.config.js",
   "scripts": {
-    "setup": "python ./scripts/setup.py",
+    "setup": "./scripts/setup.sh",
     "dev": "concurrently --kill-others \"python ./run.py\" \"npx tailwindcss -i ./app/static/css/input.css -o ./app/static/css/output.css --watch\""
   },
   "private": true,
