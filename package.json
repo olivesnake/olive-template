@@ -4,9 +4,6 @@
   "description": "",
   "main": "tailwind.config.js",
   "scripts": {
-    "setup": "npm run setup:windows || npm run setup:unix",
-    "setup:windows": "source ./scripts/setup.sh",
-    "setup:unix": "./scripts/setup.sh",
     "dev": "concurrently --kill-others \"python ./run.py\" \"npx tailwindcss -i ./app/static/css/input.css -o ./app/static/css/output.css --watch\""
   },
   "private": true,
