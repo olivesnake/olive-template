@@ -593,14 +593,6 @@ video {
   margin-right: auto;
 }
 
-.mt-3\.5 {
-  margin-top: 0.875rem;
-}
-
-.mb-2 {
-  margin-bottom: 0.5rem;
-}
-
 .mb-1 {
   margin-bottom: 0.25rem;
 }
@@ -645,19 +637,6 @@ video {
   justify-content: center;
 }
 
-.p-2 {
-  padding: 0.5rem;
-}
-
-.text-center {
-  text-align: center;
-}
-
-.text-2xl {
-  font-size: 1.5rem;
-  line-height: 2rem;
-}
-
 .text-3xl {
   font-size: 1.875rem;
   line-height: 2.25rem;
@@ -665,11 +644,6 @@ video {
 
 .font-semibold {
   font-weight: 600;
-}
-
-.text-blue-400 {
-  --tw-text-opacity: 1;
-  color: rgb(96 165 250 / var(--tw-text-opacity));
 }
 
 @font-face {
@@ -686,6 +660,16 @@ video {
   font-family: 'Geist Mono';
 
   src: url('../fonts/GeistMono[wght].woff2') format("woff2");
+
+  font-weight: 100 900;
+
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Inter';
+
+  src: url("../fonts/Inter-VariableFont_opsz,wght.ttf") format("truetype");
 
   font-weight: 100 900;
 
