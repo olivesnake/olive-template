@@ -4,11 +4,9 @@ simple [flask](https://flask.palletsprojects.com/en/stable/) and  [tailwindcss](
 boilerplate
 
 #### setup
-
-downlaod this repo, cd into it, then run the following:
-
 ```shell
-./scripts/setup.sh
+cd olive-template
+./scripts/setup
 ```
 
 #### run
