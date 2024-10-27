@@ -1,27 +1,49 @@
-OS := $(shell uname)
-
-all: setup run
-
-setup:
-	python -m venv venv
-ifeq ($(OS), Linux)
-	. venv/bin/activate
-else ifeq ($(OS), Darwin)
-	. venv/bin/activate
-else ifneq (,$(findstring CYGWIN,$(OS)))
-	. venv/Scripts/activate
-else ifneq (,$(findstring MINGW,$(OS)))
-	. venv/Scripts/activate
-else ifneq (,$(findstring MSYS,$(OS)))
-	. venv/Scripts/activate
+# Detect OS
+ifeq ($(OS),Windows_NT)
+	PYTHON := python
+	VENV_DIR := venv/Scripts
+	VENV_ACTIVATE := $(VENV_DIR)/activate.bat
+	RM := rmdir /s /q
 else
-	@echo "Unknown OS: $(OS)"
-	@exit 1
+	PYTHON := python3
+	VENV_DIR := venv/bin
+	VENV_ACTIVATE := $(VENV_DIR)/activate
+	RM := rm -rf
 endif
-	venv/bin/pip install -r requirements.txt
+
+# Default target
+.PHONY: all
+all: venv deps
+
+# Create virtual environment
+venv: requirements.txt
+	$(PYTHON) -m venv venv
+	@echo "Virtual environment created."
+
+# Install dependencies
+.PHONY: deps
+deps: pip-deps node-deps
+
+# Install Python dependencies
+.PHONY: pip-deps
+pip-deps: venv
+ifeq ($(OS),Windows_NT)
+	@echo "Installing Python dependencies..."
+	@cmd /c "$(VENV_ACTIVATE) && pip install -r requirements.txt"
+else
+	@echo "Installing Python dependencies..."
+	@. $(VENV_ACTIVATE) && pip install -r requirements.txt
+endif
+
+# Install Node.js dependencies
+.PHONY: node-deps
+node-deps:
+	@echo "Installing Node.js dependencies..."
 	npm install
 
-	@echo "Template setup complete!"
-
-run:
-	npm run dev
+# Clean up
+.PHONY: clean
+clean:
+	@echo "Cleaning up..."
+	-$(RM) venv
+	-$(RM) node_modules
