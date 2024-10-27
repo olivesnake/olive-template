@@ -5,7 +5,7 @@ boilerplate
 
 #### setup
 ```shell
-cd olive-template
+cd olive-template # or whatever you rename it
 ./scripts/setup
 ```
 
