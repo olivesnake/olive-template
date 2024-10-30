@@ -1,7 +1,7 @@
 #!/usr/bin/bash
 
 OS_NAME=$(uname)
-
+rm -rf .git
 python -m venv venv/
 if [[ "$OS_NAME" == "Linux" || "$OS_NAME" == "Darwin" ]]; then
   . venv/bin/activate
@@ -10,4 +10,3 @@ else
 fi
 pip install -r requirements.txt
 npm install
-
