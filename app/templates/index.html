@@ -5,8 +5,12 @@
 {% block body %}
 <div class="flex flex-col justify-center items-center h-screen">
     <h1 class="animate-bounce text-3xl font-semibold mb-1">start building!</h1>
-    <code>./app/routes.py</code>
+
+<div x-data="{count: 0}">
+    <button x-on:click="count++">click here</button>
+    <span x-text="count"></span>
 </div>
-        <h1 x-data="{ message: 'I ❤️ Alpine' }" x-text="message"></h1>
+
+</div>
 
 {% endblock %}
