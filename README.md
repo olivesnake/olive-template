@@ -1,18 +1,23 @@
 # 🫒 template
 
-simple [flask](https://flask.palletsprojects.com/en/stable/) and  [tailwindcss](https://tailwindcss.com/) full-stack
+My [flask](https://flask.palletsprojects.com/en/stable/) and  [tailwindcss](https://tailwindcss.com/) full-stack
 boilerplate
 
-#### setup
+#### Getting started
+
+**with Makefile**
 ```shell
-cd olive-template # or whatever you rename it
-./scripts/setup
+make build
+make run
+```
+**on command line**
+```shell
+python -m venv .venv
+. .venv/bin/activate # linux/macos 
+# venv/Scripts/activate on Windows
+pip install -r requirements.txt
+
+python run.py
 ```
 
-#### run
-
-```shell
-npm run dev
-```
-
-you're good to go!
+open [here](http://localhost:8000)!

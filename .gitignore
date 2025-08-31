@@ -56,6 +56,9 @@ web_modules/
 # Optional npm cache directory
 .npm
 
+migrations/
+.cadence
+
 # Optional eslint cache
 .eslintcache
 
